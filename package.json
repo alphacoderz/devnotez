@@ -1,0 +1,38 @@
+{
+  "name": "devnotes",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A open-source developer's blogging portal",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=14.18.0"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^0.11.4",
+    "@astrojs/rss": "^1.0.2",
+    "@astrojs/sitemap": "^1.0.0",
+    "astro": "^1.5.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alphacoderz/devnotes.git"
+  },
+  "author": "alphacoderz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alphacoderz/devnotes/issues"
+  },
+  "homepage": "https://github.com/alphacoderz/devnotes#readme"
+}
