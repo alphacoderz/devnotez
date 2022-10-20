@@ -1,0 +1,166 @@
+---
+layout: '../../layouts/NotePage.astro'
+title: 'Getting started with sorting algorithms'
+description: 'Some important sorting algorithms for developers or cs-students'
+pubDate: 'October 20 2022'
+heroImage: '/placeholder.jpg'
+authorName: 0xMahabub
+authorProfile: https://github.com/0xMahabub
+---
+
+# \# Sorting Algorithms
+
+There are many sorting algorithms out there. But we need to learn some basic sorting algorithms first. Then we can also go for further move.
+For now,<br />
+We will learn `Bubble Sort`, `Selection Sort`, and `Insertion Sort` first. Then we also touch the `Divide & Conquer` => `Merge Sort` & `Quick Sort` too.
+
+Table of Contents: 
+- [Bubble Sort](#bubble-sort)
+- [Selection Sort](#selection-sort)
+- [Insertion Sort](#insertion-sort)
+
+<a name="bubble-sort"></a>
+## \# BubbleSort
+
+`Complexity`: Big O(n<sup>2</sup>)
+
+<i>Code example: `Typescript` or `JavaScript`</i>
+```typescript
+function bubbleSort(arr: number[]): void {
+  for (let i:number = 0; i<arr.length - 1; i++) {
+    for (let j:number = 0; j<arr.length - 1 - i; j++) {
+      if (arr[j] > arr[j+1]) {
+        // using a temp variable
+        let temp = arr[j+1];
+        arr[j+1] = arr[j];
+        arr[j] = temp;
+        // or by swaping
+        // [arr[j+1], arr[j]] = [arr[j], arr[j+1]]
+      }
+    }
+  }
+}
+```
+<i>Code example: `Java programming`</i>
+```java
+public void bubbleSort(List<Integer> arr) {
+  for (int i=0; i<arr.size() - 1; i++) {
+    for (int j=0; j<arr.size() - 1 - i; j++) {
+      if (arr.get(j) > arr.get(j+1)) {
+        int temp = arr.get(j+1);
+        arr.set(j+1, arr.get(j));
+        arr.set(j, temp);
+      }
+    }
+  }
+}
+```
+<i>Code example: `Python programming`</i>
+```python
+def bubbleSort(arr: List[int]) -> None:
+  for i in range(0, len(arr) - 1):
+    for j in range(0, len(arr) - 1 - i):
+      if arr[j] > arr[j+1]:
+        arr[j], arr[j+1] = arr[j+1], arr[j] # swaped
+
+# Done
+```
+
+<hr /><br />
+<a name="selection-sort"></a>
+## \# SelectionSort
+
+`Complexity`: Big O(n<sup>2</sup>)
+<i>Code example: `Typescript` or `JavaScript`</i>
+```typescript
+function selectionSort(arr: number[]): void {
+  for (let i:number = 0; i<arr.length - 1; i++) {
+    let minIndex: number = i;
+    for (let j:number = 0; j<arr.length; j++) {
+      if (arr[minIndex] > arr[j]) {
+        minIndex = j;
+      }
+    }
+    // now swap
+    [arr[minIndex], arr[i]] = [arr[i], arr[minIndex]];
+  }
+}
+```
+
+<i>Code example: `Java programming`</i>
+```java
+public void selectionSort(List<Integer> arr) {
+  for (int i=0; i<arr.size() - 1; i++) {
+    int minIndex = i;
+    for (int j=0; j<arr.size(); j++) {
+      if (arr.get(minIndex) > arr.get(j)) {
+        minIndex = j;
+      }
+    }
+    // swap
+    int temp = arr.get(minIndex);
+    arr.set(minIndex, arr.get(i));
+    arr.set(i, temp);
+  }
+}
+```
+
+<i>Code example: `Python programming`</i>
+```python
+def selectionSort(arr: List[int]) -> None:
+  for i in range(0, len(arr) - 1):
+    minIndex: int = i
+    for j in range(0, len(arr)):
+      if arr[minIndex] > arr[j]:
+        minIndex = j
+    
+    # now swap
+    arr[minIndex], arr[i] = arr[i], arr[minIndex]
+
+# Done
+```
+
+<hr /><br />
+<a name="insertion-sort"></a>
+## \# InsertionSort
+
+`Complexity`: Big O(n<sup>2</sup>)
+<i>Code example: `Typescript` or `JavaScript`</i>
+```typescript
+function insertionSort(arr: number[]): void {
+  for (let i: number = 1; i<arr.length; i++) {
+    let key: number = arr[i];
+    for (let j: number = i-1; j >= 0 && arr[j] > key; j++) {
+      arr[j+1] = arr[j];
+    }
+    arr[j+1] = key;
+  }
+}
+```
+<i>Code example: `Java programming`</i>
+```java
+public void insertionSort(List<Integer> arr) {
+  for (int i=0; i<arr.size(); i++) {
+    int key = arr.get(i);
+    for (int j=i-1; j>=0 && arr.get(j) > key; j++) {
+      arr.get(j+1) = arr.get(j);
+    }
+    arr.get(j+1) = key;
+  }
+}
+```
+
+<i>Code example: `Python programming`</i>
+```python
+def insertionSort(arr: List[int]) -> None:
+  for i in range(0, len(arr)):
+    key: int = arr[i]
+    j: int = i-1
+    while (j>=0 and arr[j] > key):
+      arr[j+1] = arr[j]
+      j -= 1
+
+    arr[j+1] = key
+
+# Done
+```
