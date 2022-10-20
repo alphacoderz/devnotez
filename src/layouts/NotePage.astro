@@ -1,7 +1,7 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 export interface Props {
   content: {
     title: string;
@@ -9,10 +9,22 @@ export interface Props {
     pubDate?: string;
     updatedDate?: string;
     heroImage?: string;
+    author?: string;
+    authorProfile?: string;
+    authorName?: string;
   };
 }
 const {
-  content: { title, description, pubDate, updatedDate, heroImage },
+  content: {
+    title,
+    description,
+    pubDate,
+    updatedDate,
+    heroImage,
+    authorProfile,
+    authorName,
+    author
+  }
 } = Astro.props;
 ---
 
@@ -39,6 +51,20 @@ const {
         <h1 class="title">{title}</h1>
         {pubDate && <time>{pubDate}</time>}
         {
+          (author || authorName) && (
+            <p>
+              Written By:{' '}
+              {authorProfile ? (
+                <a target="_blank" href={authorProfile}>
+                  {authorName || author}
+                </a>
+              ) : (
+                <span>{author || authorName}</span>
+              )}
+            </p>
+          )
+        }
+        {
           updatedDate && (
             <div>
               Last updated on <time>{updatedDate}</time>
@@ -46,6 +72,7 @@ const {
           )
         }
         <hr />
+        {description && <p>{description}</p><hr />}
         <slot />
       </article>
     </main>

@@ -1,5 +1,5 @@
 {
-  "name": "devnotes",
+  "name": "devnotez",
   "type": "module",
   "version": "1.0.0",
   "private": true,
@@ -23,6 +23,11 @@
     "astro": "^1.5.0"
   },
   "devDependencies": {
+    "eslint": "^8.25.0",
+    "eslint-plugin-astro": "^0.20.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "prettier": "^2.7.1",
+    "prettier-plugin-astro": "^0.6.0",
     "typescript": "^4.8.4"
   },
   "repository": {
@@ -30,7 +35,7 @@
     "url": "git+https://github.com/alphacoderz/devnotes.git"
   },
   "author": "alphacoderz",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/alphacoderz/devnotes/issues"
   },
