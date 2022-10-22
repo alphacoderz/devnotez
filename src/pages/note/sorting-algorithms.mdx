@@ -76,7 +76,7 @@ def bubbleSort(arr: List[int]) -> None:
 function selectionSort(arr: number[]): void {
   for (let i:number = 0; i<arr.length - 1; i++) {
     let minIndex: number = i;
-    for (let j:number = 0; j<arr.length; j++) {
+    for (let j:number = i+1; j<arr.length; j++) {
       if (arr[minIndex] > arr[j]) {
         minIndex = j;
       }
@@ -92,7 +92,7 @@ function selectionSort(arr: number[]): void {
 public void selectionSort(List<Integer> arr) {
   for (int i=0; i<arr.size() - 1; i++) {
     int minIndex = i;
-    for (int j=0; j<arr.size(); j++) {
+    for (int j=i+1; j<arr.size(); j++) {
       if (arr.get(minIndex) > arr.get(j)) {
         minIndex = j;
       }
@@ -110,7 +110,7 @@ public void selectionSort(List<Integer> arr) {
 def selectionSort(arr: List[int]) -> None:
   for i in range(0, len(arr) - 1):
     minIndex: int = i
-    for j in range(0, len(arr)):
+    for j in range(i+1, len(arr)):
       if arr[minIndex] > arr[j]:
         minIndex = j
     
@@ -130,8 +130,10 @@ def selectionSort(arr: List[int]) -> None:
 function insertionSort(arr: number[]): void {
   for (let i: number = 1; i<arr.length; i++) {
     let key: number = arr[i];
-    for (let j: number = i-1; j >= 0 && arr[j] > key; j++) {
-      arr[j+1] = arr[j];
+    let j: number = i-1;
+    while(j >= 0 && arr[j] > key) {
+        arr[j+1] = arr[j];
+        j--;
     }
     arr[j+1] = key;
   }
@@ -142,10 +144,12 @@ function insertionSort(arr: number[]): void {
 public void insertionSort(List<Integer> arr) {
   for (int i=0; i<arr.size(); i++) {
     int key = arr.get(i);
-    for (int j=i-1; j>=0 && arr.get(j) > key; j++) {
+    int j: number = i-1;
+    while(j>=0 && arr.get(j) > key){
       arr.get(j+1) = arr.get(j);
+      j--;
     }
-    arr.get(j+1) = key;
+    arr.set(j+1, key);
   }
 }
 ```
