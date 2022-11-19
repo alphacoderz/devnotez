@@ -9,20 +9,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"
-    ></script>
   </head>
   <body>
     <Header title={SITE_TITLE} />
     <main>
       <h1>🧑‍🚀 Hello, Alpha Coders!</h1>
-      <p>
+      <!-- <p>
         Welcome to the official <a href="https://astro.build/">Astro</a> blog starter
         template. This template serves as a lightweight, minimally-styled starting
         point for anyone looking to build a personal website, blog, or portfolio
         with Astro.
-      </p>
-      <p>
+      </p> -->
+      <!-- <p>
         This template comes with a few integrations already configured in your
         <code>astro.config.mjs</code> file. You can customize your setup with
         <a href="https://astro.build/integrations">Astro Integrations</a> to add
@@ -46,14 +44,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
             >src/layouts/NotePage.astro</code
           >
         </li>
-      </ul>
-      <p>
+      </ul> -->
+      <!-- <p>
         Have fun! If you get stuck, remember to <a
           href="https://docs.astro.build/"
           >read the docs
         </a> or <a href="https://astro.build/chat">join us on Discord</a> to ask
         questions.
-      </p>
+      </p> -->
 
       <p>
         Very soon we are developing this portal for public and any one can
@@ -61,23 +59,5 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
       </p>
     </main>
     <Footer />
-
-    <script>
-      declare global {
-        interface Window {
-          netlifyIdentity: any;
-        }
-      }
-
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on('init', (user: any) => {
-          if (!user) {
-            window.netlifyIdentity.on('login', () => {
-              document.location.href = '/admin/';
-            });
-          }
-        });
-      }
-    </script>
   </body>
 </html>

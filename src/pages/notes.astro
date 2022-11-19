@@ -1,10 +1,10 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 // Use Astro.glob() to fetch all notes, and then sort them by date.
-const notes = (await Astro.glob("./note/*.{md,mdx}")).sort(
+const notes = (await Astro.glob('./note/*.{md,mdx}')).sort(
   (a, b) =>
     new Date(b.frontmatter.pubDate).valueOf() -
     new Date(a.frontmatter.pubDate).valueOf()
@@ -37,21 +37,26 @@ const notes = (await Astro.glob("./note/*.{md,mdx}")).sort(
     <Header />
     <main>
       <section>
-        <ul>
+        <ul class="notes">
           {
             notes.map((note) => (
-              <li>
-                <time datetime={note.frontmatter.pubDate}>
-                  {new Date(note.frontmatter.pubDate).toLocaleDateString(
-                    "en-us",
-                    {
-                      year: "numeric",
-                      month: "short",
-                      day: "numeric",
-                    }
-                  )}
-                </time>
-                <a href={note.url}>{note.frontmatter.title}</a>
+              <li class="note_card">
+                <div class="note_intro">
+                  <img src={note.frontmatter.heroImage} />
+                </div>
+                <div class="note_info">
+                  <time datetime={note.frontmatter.pubDate}>
+                    {new Date(note.frontmatter.pubDate).toLocaleDateString(
+                      'en-us',
+                      {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric'
+                      }
+                    )}
+                  </time>
+                  <a href={note.url}>{note.frontmatter.title}</a>
+                </div>
               </li>
             ))
           }
