@@ -10,18 +10,20 @@
 - Clone on your local machine.
 
         git clone https://github.com/alphacoderz/devnotez.git
+        # or 
+        fork this repository (recommended)
 
 - Navigate to the project directory.
 
-        cd your_cloned_dir
+        cd your_cloned_dir or forked repo local folder (cloned)
 
 - Add a new remote branch
 
-        git remote add <Target_Branch> https://github.com/<Your_Username>/devnotez.git
+        git remote add <TargetBranch> https://github.com/<YourUsername>/<repoName>.git
 
-- Create a new _branch_
+- Create a new _branch_ (Always try to work in separated branches)
 
-        git checkout -b <new-branch>
+        git checkout -b <new_branch>
 
 - Add all the changes that you have made
 
@@ -33,6 +35,6 @@
 
 - Then push
 
-        git push <Target_Branch> <new-branch>
+        git push <remote_repo_tag_name> <new_branch or target_branch>
 
 - Create a new pull request from your forked repository by clicking New-Pull-Request.

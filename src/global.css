@@ -70,3 +70,48 @@ blockquote {
   margin: 0px;
   font-style: italic;
 }
+main {
+  min-height: calc(100vh - 250px);
+}
+
+/***----------***
+*** CUSTOM CSS ***
+***----------***/
+
+.contrib_graph {
+  display: flex;
+  justify-content: first baseline;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  padding: 1rem 0.25rem;
+  background-color: #daeaf0;
+  border-radius: 6px;
+}
+
+.notes {
+  margin-left: 0;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.note_card {
+  display: flex;
+  flex-direction: column;
+}
+
+.note_info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*======> RESPONSIVE CSS <======*/
+
+@media screen and (max-width: 540px) {
+  .notes {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
