@@ -2,4 +2,4 @@
 
 `You are also invited ;)`
 
-## Please follow CONTRIBUTION.md for contribute
+## Please follow CONTRIBUTING.md for contribute

@@ -1,0 +1,77 @@
+---
+layout: '../../layouts/NotePage.astro'
+title: 'Pointers with C programming'
+description: 'Pointer is a very important topic in Structural programming. It exists in many programming languages like C, C++, Go, etc.'
+pubDate: 'November 19 2022'
+heroImage: '/placeholder.jpg'
+authorName: 0xMahabub
+authorProfile: https://github.com/0xMahabub
+---
+
+# \# Pointer in C Programming
+
+Pointers are powerful features of C and C++ programming. Before we learn pointers, let's learn about addresses in C programming. <br />
+
+**Table of Contents**: 
+- [Address in C](#address)
+- [C Pointers](#pointers-in-c)
+<br />
+
+<a name="address"></a>
+### \# Address in C Programming
+If you have a variable `var` in your program, &var will give you its address in the memory. We have used address numerous times while using the `scanf()` function.
+```c
+int var; // our variable
+scanf("%d", &var); // &var is the address of our variable
+```
+The value entered by a user is stored in the address of our `var` variable. Now, let's see an example
+
+```c
+#include <stdio.h>
+
+int main() {
+  int var = 7;
+  printf("var is now = %d\n", var); // prints: var is now = 7
+
+  // using & before our vaiable name to access its address
+  printf("Address of var = %p", &var); // prints: Address of var = 2756778
+
+  return 0;
+}
+```
+`Output` :=>
+```bash
+var is now = 7
+Address of var = 2756778
+```
+<br />
+<hr />
+
+<a name="pointers-in-c"></a>
+### \# Pointers in C
+Pointers (pointer variables) are special variables that are used to store addresses rather than values.
+
+`Pointer Syntax` :=>
+```c
+int* p; // p is a pointer variable which stores a memory address value
+```
+Let's assign address to our pointer vaiable
+```c
+int* p; // pointer variable
+int num; // normallly int variable
+num = 7; // assigned int value 7
+p = &num; // assigned num variable's address to p (pointer) variable
+```
+Now, we can access to `num` vaiable's value using our pointer vaiable `p` without calling the `num` variable. Let's see the magic!
+
+```c
+prinf("Value of Num = %d", *p); // calling pointed variable value using pointer
+```
+```bash
+Value of Num = 7
+```
+Now, you can see. We didn't call the `num` variable. But We got that value using our pointer variable's access `*p`. Which allowed us to get the value of pointed variable by its address lookup.
+
+> There are more to describ and talk about the pointer and its use cases in programming. But we will make another article on that. For now, try to understand and get started with this.
+
+-- Thank you.
