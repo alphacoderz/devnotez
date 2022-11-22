@@ -11,7 +11,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install",
+    "lint:staged": "npx lint-staged"
   },
   "engines": {
     "node": ">=14.18.0"
@@ -26,18 +28,27 @@
     "eslint": "^8.25.0",
     "eslint-plugin-astro": "^0.20.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.6.0",
     "typescript": "^4.8.4"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alphacoderz/devnotes.git"
+    "url": "git+https://github.com/alphacoderz/devnotez.git"
+  },
+  "lint-staged": {
+    "*.(js|ts|jsx|tsx|astro)": [
+      "eslint",
+      "prettier --write"
+    ],
+    "*.(html|json)": "prettier --write"
   },
   "author": "alphacoderz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alphacoderz/devnotes/issues"
+    "url": "https://github.com/alphacoderz/devnotez/issues"
   },
-  "homepage": "https://github.com/alphacoderz/devnotes#readme"
+  "homepage": "https://github.com/alphacoderz/devnotez#readme"
 }

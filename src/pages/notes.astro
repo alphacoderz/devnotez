@@ -26,14 +26,16 @@ const notes = (await Astro.glob('./note/*.{md,mdx}')).sort(
       ul li time {
         flex: 0 0 130px;
         font-style: italic;
-        color: #595959;
+        color: var(--color-text);
       }
-      ul li a:visited {
-        color: #8e32dc;
+      ul li a {
+        color: var(--ancText);
+        font-size: 20px;
+        font-weight: 600;
       }
     </style>
   </head>
-  <body>
+  <body data-theme="dark">
     <Header />
     <main>
       <section>

@@ -1,29 +1,48 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../config';
+import Toggle from './ThemeChange.astro';
 ---
 
 <header>
-  <h2>
-    {SITE_TITLE}
-  </h2>
-  <nav>
-    <HeaderLink href="/">Home</HeaderLink>
-    <HeaderLink href="/notes">Notes</HeaderLink>
-    <HeaderLink href="/about">About</HeaderLink>
-    <!-- <HeaderLink href="https://twitter.com/astrodotbuild" target="_blank"
-      >Twitter</HeaderLink
-    > -->
-    <HeaderLink href="https://github.com/alphacoderz" target="_blank"
-      >GitHub</HeaderLink
-    >
-  </nav>
+  <div class="navbar">
+    <h2 class="logo-text">
+      {SITE_TITLE}
+    </h2>
+    <nav>
+      <Toggle />
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/notes">Notes</HeaderLink>
+      <HeaderLink href="/about">About</HeaderLink>
+      <!-- <HeaderLink href="https://twitter.com/astrodotbuild" target="_blank"
+        >Twitter</HeaderLink
+      > -->
+      <HeaderLink
+        href="https://github.com/alphacoderz/devnotez"
+        target="_blank"
+      >
+        <i class="bx bxl-github icon-color"></i>
+      </HeaderLink>
+    </nav>
+  </div>
 </header>
 <style>
+  .navbar {
+    display: flex;
+    align-items: center;
+  }
   header {
     margin: 0em 0 2em;
   }
   h2 {
     margin: 0.5em 0;
+    margin-right: auto;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0 0.5rem;
   }
 </style>
