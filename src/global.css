@@ -4,50 +4,124 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Sono:wght@200;300;400;500;600;700;800&display=swap');
+
+:root {
+  --color-bg: #f2f2f2;
+  --color-text: #444444;
+  --bold-text: #222222;
+  --nav-text: #000000;
+  --headerTxt: #262626;
+  --ancText: #3273dc;
+  --code: #f2f2f2;
+  --codebg: #2f3746;
+  --block-quote-border: #999;
+  --block-quote-text: #222;
+  --slider-bg: #cceaff;
+  --slider-bg-before: #fff;
+  --slider-input-bg: #3273dc;
+  --selection-bg: #3273dc;
+  --logoColor: #222;
+}
+
+[data-theme='light'] {
+  --color-bg: #f2f2f2;
+  --color-text: #444444;
+  --bold-text: #222222;
+  --nav-text: #000000;
+  --headerTxt: #262626;
+  --ancText: #3273dc;
+  --code: #f2f2f2;
+  --codebg: #daeaf0;
+  --block-quote-border: #999;
+  --block-quote-text: #222;
+  --slider-bg: #dddddd;
+  --slider-bg-before: #fff;
+  --slider-input-bg: #3273dc;
+  --selection-bg: #3273dc;
+  --logoColor: #222;
+}
+
+[data-theme='dark'] {
+  --color-bg: #151515;
+  --color-text: #dddddd;
+  --bold-text: #eeeeee;
+  --headerTxt: #edf4f5;
+  --ancText: #9eeefc;
+  --nav-text: #dddddd;
+  --code: #f2f2f2;
+  --codebg: #0d1117;
+  --block-quote-border: #1e62cf;
+  --block-quote-text: #dddddd;
+  --selection-bg: #3566b4;
+  --logoColor: white;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
+::selection {
+  background-color: var(--selection-bg);
+  color: white;
+}
+
 body {
-  font-family: Verdana, sans-serif;
+  /* font-family: 'Inter', sans-serif; */
+  /* font-family: 'Sono', sans-serif; */
+  font-family: 'Inter', 'Sono', sans-serif;
+  font-weight: 500;
   margin: auto;
   padding: 20px;
   max-width: 65ch;
   text-align: left;
-  background-color: #fff;
+  background-color: var(--color-bg);
   word-wrap: break-word;
   overflow-wrap: break-word;
   line-height: 1.5;
-  color: #444;
+  color: var(--color-text);
+}
+strong,
+b {
+  color: var(--bold-text);
 }
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-strong,
-b {
-  color: #222;
+h6 {
+  color: var(--headerTxt);
+  font-family: 'Inter', sans-serif;
+}
+h1 {
+  font-family: 'Sono', sans-serif;
 }
 a {
-  color: #3273dc;
+  color: var(--ancText);
+  font-family: 'Inter', sans-serif;
 }
 nav a {
   margin-right: 10px;
+  color: var(--ancText);
+  font-family: 'Sono', sans-serif;
+  font-weight: 500;
 }
 textarea {
   width: 100%;
   font-size: 16px;
+  font-family: 'Inter', sans-serif;
 }
 input {
   font-size: 16px;
+  font-family: 'Inter', sans-serif;
 }
 content {
   line-height: 1.6;
 }
 table {
   width: 100%;
+  font-family: 'Inter', sans-serif;
 }
 img {
   max-width: 100%;
@@ -55,7 +129,7 @@ img {
 }
 code {
   padding: 2px 5px;
-  background-color: #f2f2f2;
+  background-color: var(--codebg);
 }
 pre {
   padding: 1rem;
@@ -65,18 +139,126 @@ pre > code {
 }
 blockquote {
   border: 1px solid #999;
-  color: #222;
+  color: --var(--block-quote-text);
   padding: 2px 0px 2px 20px;
   margin: 0px;
   font-style: italic;
+  font-family: 'Sono', sans-serif;
 }
 main {
   min-height: calc(100vh - 250px);
 }
 
+/*===> Theme CSS <===*/
+/* TOGGLE  */
+.theme-switch-wrapper {
+  display: flex;
+  max-width: 80px;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.title {
+  color: var(--bold-text);
+  font-family: 'Sono', sans-serif;
+}
+
+.slider {
+  background-color: var(--slider-bg);
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  background-color: var(--slider-bg-before);
+  bottom: 4px;
+  content: '';
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--slider-input-bg);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider svg {
+  color: #222;
+  position: absolute;
+  transition: opacity 0.2s ease 0s, transform 0.35s ease 0s;
+  pointer-events: none;
+}
+
+.feather-moon {
+  opacity: 0;
+  left: 9px;
+  bottom: 9px;
+  transform: translateX(4px);
+}
+
+.feather-sun {
+  opacity: 1;
+  right: 10px;
+  bottom: 9px;
+  transform: translateX(0px);
+}
+
+input:checked + .slider .feather-moon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+input:checked + .slider .feather-sun {
+  opacity: 0;
+  transform: translateX(-4px);
+}
+
+.icon-color {
+  /* background: var(--logoColor); */
+  color: var(--logoColor);
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /***----------***
 *** CUSTOM CSS ***
 ***----------***/
+
+.theme-font {
+  font-family: 'Sono', sans-serif;
+}
+
+.logo-text {
+  font-family: 'Sono', sans-serif;
+  font-weight: 600;
+}
 
 .contrib_graph {
   display: flex;
@@ -86,8 +268,21 @@ main {
   height: auto;
   margin-top: 1rem;
   padding: 1rem 0.25rem;
-  background-color: #daeaf0;
+  background-color: var(--codebg);
   border-radius: 6px;
+}
+
+.note {
+  color: var(--color-text);
+}
+
+.note h1,
+.note h2,
+.note h3,
+.note h4,
+.note h5,
+.note h6 {
+  color: var(--headerTxt);
 }
 
 .notes {
@@ -106,6 +301,7 @@ main {
 .note_info {
   display: flex;
   flex-wrap: wrap;
+  color: var(--color-text);
 }
 
 /*======> RESPONSIVE CSS <======*/

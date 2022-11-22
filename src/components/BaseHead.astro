@@ -1,13 +1,13 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import "../global.css";
+import '../global.css';
 export interface Props {
   title: string;
   description: string;
   image?: string;
 }
-const { title, description, image = "/placeholder-social.jpg" } = Astro.props;
+const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -34,3 +34,7 @@ const { title, description, image = "/placeholder-social.jpg" } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+<link
+  href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+  rel="stylesheet"
+/>
