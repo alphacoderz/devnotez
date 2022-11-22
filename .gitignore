@@ -23,3 +23,7 @@ pnpm-lock.yaml
 
 # macOS-specific files
 .DS_Store
+
+# husky
+.husky
+!.husky/pre-commit
