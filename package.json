@@ -32,12 +32,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alphacoderz/devnotes.git"
+    "url": "git+https://github.com/alphacoderz/devnotez.git"
   },
   "author": "alphacoderz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alphacoderz/devnotes/issues"
+    "url": "https://github.com/alphacoderz/devnotez/issues"
   },
-  "homepage": "https://github.com/alphacoderz/devnotes#readme"
+  "homepage": "https://github.com/alphacoderz/devnotez#readme"
 }
