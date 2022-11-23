@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "private": true,
-  "description": "A open-source developer's blogging portal",
+  "description": "An open-source developer's blogging portal",
   "main": "index.js",
   "scripts": {
     "dev": "astro dev",
@@ -15,6 +15,24 @@
     "prepare": "husky install",
     "lint:staged": "npx lint-staged"
   },
+  "keywords": [
+    "JavaScript",
+    "Nodejs",
+    "AstroJs",
+    "dev-blog",
+    "dev-note",
+    "devnote",
+    "dev-notes",
+    "devnotes",
+    "devnotez",
+    "developer's note",
+    "notes by developers",
+    "notes by engineers",
+    "notes for cs students",
+    "notes for cse students",
+    "notes for swe students",
+    "notes for web developers"
+  ],
   "engines": {
     "node": ">=14.18.0"
   },
@@ -28,6 +46,7 @@
     "eslint": "^8.25.0",
     "eslint-plugin-astro": "^0.20.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.0",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
@@ -39,11 +58,11 @@
     "url": "git+https://github.com/alphacoderz/devnotez.git"
   },
   "lint-staged": {
-    "*.(js|ts|jsx|tsx|astro)": [
-      "eslint",
-      "prettier --write"
+    "*.(js|ts|jsx|tsx)": [
+      "npx prettier --write",
+      "eslint"
     ],
-    "*.(html|json)": "prettier --write"
+    "*.(html|json|astro)": "prettier --write"
   },
   "author": "alphacoderz",
   "license": "MIT",
