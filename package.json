@@ -46,6 +46,7 @@
     "eslint": "^8.25.0",
     "eslint-plugin-astro": "^0.20.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.0",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
@@ -57,11 +58,11 @@
     "url": "git+https://github.com/alphacoderz/devnotez.git"
   },
   "lint-staged": {
-    "*.(js|ts|jsx|tsx|astro)": [
-      "eslint",
-      "prettier --write"
+    "*.(js|ts|jsx|tsx)": [
+      "npx prettier --write",
+      "eslint"
     ],
-    "*.(html|json)": "prettier --write"
+    "*.(html|json|astro)": "prettier --write"
   },
   "author": "alphacoderz",
   "license": "MIT",

@@ -11,20 +11,26 @@ import Toggle from './ThemeChange.astro';
     </h2>
     <nav>
       <Toggle />
-      <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href="/notes">Notes</HeaderLink>
-      <HeaderLink href="/about">About</HeaderLink>
-      <!-- <HeaderLink href="https://twitter.com/astrodotbuild" target="_blank"
+      <nav>
+        <HeaderLink href="/">Home</HeaderLink>
+        <HeaderLink href="/notes">Notes</HeaderLink>
+        <HeaderLink href="/about">About</HeaderLink>
+        <!-- <HeaderLink href="https://twitter.com/astrodotbuild" target="_blank"
         >Twitter</HeaderLink
       > -->
-      <HeaderLink
-        href="https://github.com/alphacoderz/devnotez"
-        target="_blank"
-      >
-        <i class="bx bxl-github icon-color"></i>
-      </HeaderLink>
+        <HeaderLink
+          href="https://github.com/alphacoderz/devnotez"
+          target="_blank"
+        >
+          <i class="bx bxl-github icon-color"></i>
+        </HeaderLink>
+      </nav>
     </nav>
   </div>
+
+  <button id="backToTop" class="back-to-top hidden">
+    <i class="bx bx-up-arrow-alt"></i>
+  </button>
 </header>
 <style>
   .navbar {
@@ -44,5 +50,20 @@ import Toggle from './ThemeChange.astro';
     align-items: center;
     justify-content: flex-end;
     gap: 0 0.5rem;
+  }
+
+  @media screen and (max-width: 640px) {
+    .navbar {
+      flex-direction: column;
+    }
+
+    .navbar .logo-text {
+      width: 100%;
+      text-align: center;
+      font-weight: 800;
+      font-size: 1.75rem;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
   }
 </style>

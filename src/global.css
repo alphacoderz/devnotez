@@ -22,6 +22,7 @@
   --slider-input-bg: #3273dc;
   --selection-bg: #3273dc;
   --logoColor: #222;
+  --text: #333;
 }
 
 [data-theme='light'] {
@@ -40,6 +41,7 @@
   --slider-input-bg: #3273dc;
   --selection-bg: #3273dc;
   --logoColor: #222;
+  --text: #333;
 }
 
 [data-theme='dark'] {
@@ -55,6 +57,7 @@
   --block-quote-text: #dddddd;
   --selection-bg: #3566b4;
   --logoColor: white;
+  --text: #fff;
 }
 
 html {
@@ -250,6 +253,29 @@ input:checked + .slider .feather-sun {
 /***----------***
 *** CUSTOM CSS ***
 ***----------***/
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+#backToTop,
+.back-top-top {
+  display: flex;
+  position: fixed !important;
+  right: 2rem;
+  bottom: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  font-size: 1.75rem;
+  border-radius: 50%;
+  color: white;
+  background-color: var(--selection-bg);
+  border: none;
+}
 
 .theme-font {
   font-family: 'Sono', sans-serif;

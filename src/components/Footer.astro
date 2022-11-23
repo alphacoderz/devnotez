@@ -11,3 +11,28 @@ const today = new Date();
     text-align: center;
   }
 </style>
+
+<script>
+  // back-to-top
+  const showOnpx = 200;
+  const backToTopBtn = document.querySelector('.back-to-top');
+
+  const scrollContainer = () => {
+    return document.documentElement || document.body;
+  };
+
+  document.addEventListener('scroll', () => {
+    if (scrollContainer().scrollTop > showOnpx) {
+      backToTopBtn.classList.remove('hidden');
+    } else if (scrollContainer().scrollTop < showOnpx) {
+      backToTopBtn.classList.add('hidden');
+    } else {
+      backToTopBtn.classList.add('hidden');
+    }
+  });
+
+  backToTopBtn.addEventListener('click', () => {
+    // back to the top
+    document.body.scrollIntoView();
+  });
+</script>
