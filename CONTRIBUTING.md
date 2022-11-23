@@ -9,17 +9,15 @@
 - Fork this repo (button on top).
 - Clone on your local machine.
 
-        git clone https://github.com/alphacoderz/devnotez.git
-        # or 
-        fork this repository (recommended)
+        git clone https://github.com/<your_username>/repo_name.git
 
-- Navigate to the project directory.
+- Navigate to the project directory. And start coding.
 
-        cd your_cloned_dir or forked repo local folder (cloned)
+        cd your_cloned_dir
 
 - Add a new remote branch
 
-        git remote add <TargetBranch> https://github.com/<YourUsername>/<repoName>.git
+        git remote add <repo_alias> or origin https://github.com/<YourUsername>/<repoName>.git
 
 - Create a new _branch_ (Always try to work in separated branches)
 
@@ -38,3 +36,12 @@
         git push <remote_repo_tag_name> <new_branch or target_branch>
 
 - Create a new pull request from your forked repository by clicking New-Pull-Request.
+
+
+## How can you contribute?
+
+> \# Search for issues created in this repo & try to solve them (if not yet).
+
+> \# Or, You can just be a note writter. create a new file in `./src/pages/note/your_note.mdx`. Write your note in `.mdx` or `.md` markdown syntax format. Check how it looks in development server. Then push to github.
+
+> \# Implement a new necessary feature according to our issue listed.

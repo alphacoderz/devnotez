@@ -25,5 +25,5 @@ pnpm-lock.yaml
 .DS_Store
 
 # husky
-.husky
+.husky/*
 !.husky/pre-commit

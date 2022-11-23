@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "private": true,
-  "description": "A open-source developer's blogging portal",
+  "description": "An open-source developer's blogging portal",
   "main": "index.js",
   "scripts": {
     "dev": "astro dev",
@@ -15,6 +15,24 @@
     "prepare": "husky install",
     "lint:staged": "npx lint-staged"
   },
+  "keywords": [
+    "JavaScript",
+    "Nodejs",
+    "AstroJs",
+    "dev-blog",
+    "dev-note",
+    "devnote",
+    "dev-notes",
+    "devnotes",
+    "devnotez",
+    "developer's note",
+    "notes by developers",
+    "notes by engineers",
+    "notes for cs students",
+    "notes for cse students",
+    "notes for swe students",
+    "notes for web developers"
+  ],
   "engines": {
     "node": ">=14.18.0"
   },
